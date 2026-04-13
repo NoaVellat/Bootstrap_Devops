@@ -1,5 +1,4 @@
-name:
-  workflow_verification
+name: workflow_verification     
 
 on:
   pull_request:
@@ -10,12 +9,21 @@ on:
 
 jobs:
   build:
+    name: Run ESLint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: npm
-    - name: Install Eslint via yarn 
-      run: npm add eslint --dev 
-    - name: Run ESLint
-      run: eslint . --ext .js,.jsx,.ts,.tsx
+      
+      # Clone le repo
+      - uses: actions/checkout@v1
+
+      # Install Node.js
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      # Install les dependances precisé
+      - run: npm ci
+
+      # Télécharge Eslint
+      - uses: eslint/github-action@v0 
+    
