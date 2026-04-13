@@ -23,5 +23,5 @@ jobs:
       - run: npm ci
 
       # Télécharge Eslint
-      - uses: eslint/github-action@v4
+      - uses: eslint/github-action@v4.0.1
     
