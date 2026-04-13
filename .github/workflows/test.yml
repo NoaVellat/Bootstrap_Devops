@@ -24,4 +24,6 @@ jobs:
 
       # Télécharge Eslint
       - uses: sibiraj-s/action-eslint@v4
+        with:
+          all-files: true
     
