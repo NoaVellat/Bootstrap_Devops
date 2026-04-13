@@ -14,14 +14,14 @@ jobs:
     steps:
       
       # Clone le repo
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       # Install Node.js
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
 
       # Install les dependances precisé
       - run: npm ci
 
       # Télécharge Eslint
-      - uses: eslint/github-action@v0 
+      - uses: eslint/github-action@v4
     
